@@ -1,0 +1,138 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+\usepackage{fitch}
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Berk Ulutaş \\
+Id Number : 2522084 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+
+a) contradiction \\ \\ 
+\begin{tabular}{c|c|c|c|c|c|c}
+$p$ & $q$ & $\lnot p$ & $\lnot q$ & $p \land q$ & $\lnot p \lor \lnot q $ & $(p \land q ) \leftrightarrow (\lnot p \lor \lnot q)$ \\
+\hline
+T & T & F & F & T & F & F\\
+T & F & F & T & F & T & F\\
+F & T & T & F & F & T & F\\
+F & F & T & T & F & T & F\\
+\end{tabular}
+\\
+\\
+b) \\
+\begin{tabular}{l c l l }
+    $ p \rightarrow ((q \lor \lnot q ) \rightarrow (p \land q))$ & $\equiv$ & $ p \rightarrow (T \rightarrow (p \land q))$ & {\hspace{10pt} from table 6, Negation Law $ q \lor \lnot q \equiv T $} \\
+    & $\equiv$ & $ p \rightarrow (F \lor (p \land q))$ & {\hspace{10pt} from table 7, line 1}\\
+    & $\equiv$ & $ p \rightarrow (p \land q) $ & {\hspace{10pt} from table 6, Identity Law for F}\\
+    & $\equiv$ & $ \lnot p \lor (p \land q)$ & {\hspace{10pt} from table 7, line 1}\\
+    & $\equiv$ & $ (\lnot p \lor p) \land (\lnot p \lor q)$ & {\hspace{10pt} from table 6, first Distribution Law}\\ 
+    & $\equiv$ & $ T \land (\lnot p \lor q)$ & {\hspace{10pt} from table 6, Negation Law $\lnot p \lor p \equiv T$}\\
+    & $\equiv$ & $\lnot p \lor q $ & {\hspace{10pt} from table 6, Identity Law for T}
+    
+\end{tabular}
+
+\section*{Answer 2}
+a) $\forall x \exists y  \ W(x,y)$\\ \\
+b) $\exists y \forall x\ \lnot F(x,y) $\\ \\
+c) $\forall x (W(x,\text{P}) \rightarrow A(\text{Ali}, x) )$\\ \\
+d) $\exists x (W(\text{Büşra}, x) \land F(\text{TUBITAK}, x))$ \\ \\
+e) $\exists x \exists y \exists z ( S(x,y) \land  (S(x,z) \land (y \neq z)))$\\ \\
+f) $\forall x \forall y \forall z ((W(x,z) \land W(y,z)) \rightarrow (x = y ))$\\ \\
+g) $\exists x \exists y \exists z ( (x \neq y) \land W(x,z) \land W(y,z) \land \forall t (W(t,z) \rightarrow ((t = x) \lor (t = y))))$\\ \\
+
+\section*{Answer 3}
+\begin{math}
+\begin{nd}
+  \hypo {1} {p \rightarrow q }
+  \hypo {2} {(q \land \lnot r) \rightarrow s }
+  \hypo {3} {\lnot s}
+  \open
+  \hypo {4} {p}
+  \have {5} {q} \ie{1,4}
+  \open
+  \hypo {6} {\lnot r}
+  \have {7} {q \land \lnot r}   \ai{5,6}
+  \have {8} {s} \ie {2,7}
+  \have {9} {\bot}  \ne{3,8}
+  \close
+  \have {10} {\lnot\lnot r} \ni{6-9}
+  \have {11} {r} \nne{10}
+  \close
+  \have {12} {p \rightarrow r} \ii{4-11}
+\end{nd}
+\end{math}
+
+\newpage
+
+\section*{Answer 4}
+Ayşe : $ p $ , \
+Barış : $ s \rightarrow \lnot q$ , \
+Can : $ p \rightarrow (q \land r) $ , \
+Duygu : $ r \rightarrow s$\\ 
+\\
+$p, \ p \rightarrow (q \land r) ,\ r \rightarrow s \ \vdash  \lnot(s \rightarrow \lnot q)$\\ 
+
+
+\begin{math}
+\begin{nd}
+  \hypo {1} {p}
+  \hypo {2} {p \rightarrow (q \land r)}
+  \hypo {3} {r \rightarrow s }
+  \have {4} {q \land r} \ie{1,2}
+  \have {5} {q} \ae{4}
+  \have {6} {r} \ae{4}
+  \have {7} {s} \ie{3}
+  \open
+  \hypo {8} {s \rightarrow \lnot q}
+  \have {9} {\lnot q} \ie{7,8}
+  \have {10} {\bot} \ne{5,9}
+  \close
+  \have {11} {\lnot (s \rightarrow \lnot q )} \ni{8-10}
+\end{nd}
+\end{math}
+
+
+
+\section*{Answer 5}
+\begin{math}
+\begin{nd}
+  \hypo {1} {\forall x (P(x) \rightarrow (Q(x) \rightarrow R(x)))}
+  \hypo {2} {\exists(P(x))}
+  \hypo {3} {\forall x(\lnot R(x))}
+  \open[u]
+  \hypo {4} {P(u)} 
+  \have {5} {P(u) \rightarrow (Q(u) \rightarrow R(u))} \Ae{1}
+  \have {6} {Q(u) \rightarrow R(u)} \ie{4,5}
+  \have {7} {\lnot R(u)} \Ae{3}
+  \open
+  \hypo {8} {Q(u)}
+  \have {9} {R(u)} \ie{6,8}
+  \have {10} {\bot} \ne{7,9}
+  \close
+  \have {11} {\lnot Q(u)} \ni{8-10}
+  \close
+  \have {12} {\exists x \lnot Q(x)} \Ei{11}
+  
+\end{nd}
+\end{math}
+
+
+\end{document}

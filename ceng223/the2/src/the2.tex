@@ -1,0 +1,224 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Berk Ulutaş \\
+Id Number :  2522084 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+Suppose that $f : A \rightarrow B$
+\begin{itemize}
+    \item To show that $f$ is injective Show that if $f(x) = f(y)$ for arbitrary $x,y \in A$ with $x \neq y $, then $x= y$.
+    \item To show that $f$ is not injective Find particular elements $x,y \in A$ such that $x\neq y$ and $f(x) = f(y)$.
+    \item To show that $f$ is surjective Consider an arbitrary element $y\in B$ and find an element $x\in A$ such that $f(x)=y$.
+    \item To show that $f$ is not surjective Find a particular $y\in B$ such that $f(x) \neq y$ for all $x\in A$.
+\end{itemize}
+\hfill
+\begin{enumerate}[a)]
+    \item $f_{1} : \mathbb{R} \rightarrow \mathbb{R} , f(x) =x ^2$
+    \begin{enumerate}[a)]
+        \item Consider $-5\in\mathbb{R}$(codomain) there is no $x\in\mathbb{R}$(domain) such that $x^2 = -5$  ($x^2 \geq 0$ for every $x\in\mathbb{R}$.) so $f_{1}$ is not surjective.
+        \item Note that $-1,1\in\mathbb{R}$(domain) are distinct and $f(1) = 1 = f(-1)$. Hence $f_{1}$ is not injective.
+    \end{enumerate}
+    
+    \item $f_{2} : \mathbb{R}_{\geq 0} \rightarrow \mathbb{R} , f(x) =x ^2$
+    \begin{enumerate}[a)]
+        \item Consider $-5\in\mathbb{R}$(codomain) there is no $x\in\mathbb{R}_{\geq 0}$(domain) such that $x^2 = -5$  ($x^2 \geq 0$ for every $x\in\mathbb{R}_{\geq 0}$.) so $f_{2}$ is not surjective.
+        \item to show $f_{2}$ is injective we need to show $\forall a,b \in\mathbb{R}_{\geq 0} , f(a) = f(b) \implies a=b$
+        \begin{itemize}
+            \item suppose $f(a) = f(b)$ for some arbitrary $a,b \in \mathbb{R}_{\geq 0} $(domain)
+            \item $f(a) = a^2 $ and $f(b) = b^2 $, $a^2 = b^2$
+            \item $|a| = |b|$  (take square root of both sides)
+            \item $a=b$ (note $a,b \geq 0$ because $a,b \in \mathbb{R}_{\geq 0}$)
+            \item since $a,b$ were arbitrary this holds $\forall a,b \in \mathbb{R}_{\geq 0}$ thus $f_{2}$ is injective
+        \end{itemize} 
+    \end{enumerate}
+    
+    \item $f_{3} : \mathbb{R} \rightarrow \mathbb{R}_{\geq 0} , f(x) =x ^2$
+    \begin{enumerate}[a)]
+        \item to show $f_{3}$ is surjective we need to show $\forall y \in \mathbb{R}_{\geq 0} \exists x \in \mathbb{R}_{\geq 0} (y = f(x))$
+        \begin{itemize}
+            \item take any $y \in \mathbb{R}_{\geq 0}$(codomain)
+            \item choose $x=\sqrt{y}$ and $x \in \mathbb{R}(domain)$
+            \item $f(x) = f(\sqrt{y}) = (\sqrt{y})^2 = y$ so $f_{3}$ is surjective
+        \end{itemize} 
+        \item Note that $-1,1\in\mathbb{R}$(domain) are distinct and $f(1) = 1 = f(-1)$. Hence $f_{3}$ is not injective.
+    \end{enumerate}
+    \item $f_{4} : \mathbb{R}_{\geq 0} \rightarrow \mathbb{R}_{\geq 0} , f(x) =x ^2$
+    \begin{enumerate}[a)]
+        \item to show $f_{4}$ is surjective we need to show $\forall y \in \mathbb{R}_{\geq 0} \exists x \in \mathbb{R}_{\geq 0} (y = f(x))$
+        \begin{itemize}
+            \item take any $y \in \mathbb{R}_{\geq 0}$(codomain)
+            \item choose $x=\sqrt{y}$ and $x \in \mathbb{R}_{\geq 0}$(domain)
+            \item $f(x) = f(\sqrt{y}) = (\sqrt{y})^2 = y$ so $f_{4}$ is surjective
+        \end{itemize}
+        \item to show $f_{4}$ is injective we need to show $\forall a,b \in\mathbb{R}_{\geq 0} , f(a) = f(b) \implies a=b$
+        \begin{itemize}
+            \item suppose $f(a) = f(b)$ for some arbitrary $a,b \in \mathbb{R}_{\geq 0} $
+            \item $f(a) = a^2 $ and $f(b) = b^2 $, $a^2 = b^2$
+            \item $|a| = |b|$  (take square root of both sides)
+            \item $a=b$ (note $a,b \geq 0$ because $a,b \in \mathbb{R}_{\geq 0}$)
+            \item since $a,b$ were arbitrary this holds $\forall a,b \in \mathbb{R}_{\geq 0}$ thus $f_{4}$ is injective
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Answer 2}
+\begin{enumerate}[a)]
+    \item show that every function $f : A \subset \mathbb{Z} \rightarrow \mathbb{R} $ is continuous
+    \begin{itemize}
+        \item $\forall \epsilon \in \mathbb{R}^{+} \exists \delta \in \mathbb{R}^{+} \forall x \in A (|x-x_{0}| < \delta \rightarrow |f(x) - f(x_{0})| < \epsilon )$
+        \item let $\epsilon > 0$ and choose arbitrary  $ x_{0} \in A$
+        \item if we take $\delta = 1$ the only point which fulfills $|x-x_{0}| < \delta$ must be $x= x_{0}$ itself
+        \item also $|f(x) - f(x_{0})| = 0 < \epsilon$ since $x = x_{0}$
+        \item this equation holds since $x_{0} \in A$ was arbitrary choice
+        \item so we have shown $f : A \subset \mathbb{Z} \rightarrow \mathbb{R}$ is continuous
+    \end{itemize}
+    \item show that a necessary and sufficient condition for a function $f : \mathbb{R} \rightarrow \mathbb{Z} $ to be continuous is that $f$ is a constant function
+    \begin{itemize}
+        \item suppose $f$ is not constant
+        \item $\exists x_{1}, x_{2} \in \mathbb{R}$ such that $x_{1} \neq x_{2}$ and $f(x_{1}) \neq f(x_{2})$
+        \item assume $f(x_{2})  > f(x_{1}))$ then $f(x_{2}) - f(x_{1}) > 1$ and there should be $f(x_{2}) >f(x_{1})+ 0.2 > f(x_{1}))$
+        \item $f(x_{1})+0.2 \notin \mathbb{Z}$, so $\nexists x \in \mathbb{R}$ such that $f(x) = f(x_{1}) + 0.2$
+        \item by intermediate value theorem $f$ is not continuous this is a contradiction, therefore $f$ is necessary to be constant function 
+    \end{itemize}
+\end{enumerate}
+
+\section*{Answer 3}
+\begin{enumerate}[a)]
+    \item $X_{n} = A_{1} \times A_{2} \times \dots \ \times A_{n}$ for all $n \geq 2 $ is countable
+    \begin{itemize}
+        \item we have given that in question  $|\mathbb{Z} \times \mathbb{Z}| = |Z| = \aleph_{0}$ so cartesian product of two countable set is also countable
+        \item so, for $n=2$, $X_{2} = A_{1} \times A_{2}$ is countable
+        \item assume that $2<k<n$, and $B = X_{k} = A_{1} \times A_{2} \times \dots \times A_{k}$ is countable
+        \item $B \times A_{k+1} = A_{1} \times A_{2} \times \dots \times A_{k} \times A_{k+1}$ is countable (since $B$  and $A_{k+1}$ is countable)
+        \item so, by induction $X_{n}$ is also countable
+    \end{itemize}
+    \item infinite countable product of the set $X = \{0,1\}$ with itself is uncountable
+    \begin{itemize}
+        \item suppose that the infinite countable product of the set  $X = \{0,1\}$ with itself countable
+        \item under this assumption we can list all all possible products $r_{1}, r_{2}, r_{3}\dots$
+        \begin{itemize}
+            \item $r_{1} = 00000...$
+            \item $r_{2} = 11111...$
+            \item $r_{3} = 01010...$
+            \item $r_{4} = 10101...$
+            \item $r_{5} = 11001...$
+            \item $\dots$
+        \end{itemize}
+        \item we can construct a new product with choosing the complementary of the $r_{x}$'s (x,x)th entry such that $r = 10110...$
+        \item contradiction since newly constructed $r$ not in the list
+        \item so by using Carter's diagonalization the infinite countable product of the set  $X = \{0,1\}$ with itself is uncountable 
+    \end{itemize}
+\end{enumerate}
+
+\section*{Answer 4}
+$$(\log_{}n)^2 ,\sqrt{n}\log_{}n, n^{50}, n^{51} + n^{49}, 2^n, 5^n, (n!)^2$$
+\begin{enumerate}[a)]
+    \item $(\log_{}n)^2$ is $O(\sqrt{n}\log_{}n)$
+    \begin{enumerate} [1)]
+        \item $\log_{}n \leq \sqrt{n}$ for $n > 1$
+        \item $(\log_{}n)^2 \leq \sqrt{n}\log_{}n $ (multiply each side with $\log_{}n$)
+        \item we have choosen $k=1$ and $C=1$ to show $(\log_{}n)^2$ is $O(\sqrt{n}\log_{}n)$
+    \end{enumerate}
+    \item $(\sqrt{n}\log_{}n)$ is $O(n^{50})$
+    \begin{enumerate}[1)]
+        \item $\sqrt{n} \leq n$ and $\log_{}n \leq  n$ for $n > 1$
+        \item $\sqrt{n}\log_{}n \leq n^2 \leq n^{50}$ (multiply previous equations)
+        \item we have choosen $k=1$ and $C=1$ to show $(\sqrt{n}\log_{}n)$ is $O(n^{50})$
+    \end{enumerate}
+    \item $(n^{50})$ is $O(n^{51} + n^{49})$
+    \begin{enumerate}[1)]
+        \item $n \leq (n^2+1)$ for $n>1$
+        \item $n^{50} \leq n^{49}(n^2+1)$ (multiply both sides with $n^{49}$)
+        \item $n^{50} \leq (n^{51} + n^{49})$
+        \item we have choosen $k=1$ and $C=1$ to show  $(n^{50})$ is $O(n^{51} + n^{49})$
+    \end{enumerate}
+    \item $(n^{51} + n^{49})$ is $O(2^n)$
+    \begin{enumerate} [1)]
+        \item $n^{51} + n^{49} \leq 2n^{51}$ for $n > 1$
+        \item $\lim\limits_{n\to\infty} \dfrac{2n^{51}}{2^n} = 2\lim\limits_{n\to\infty} \dfrac{n^{51}}{2^n}$
+        \item $2\cdot\lim\limits_{n\to\infty} \dfrac{51!}{(\ln{2})^{51}2^n}$(apply L Hospital's Rule until to get $n^0$)
+        \item $\dfrac{2\cdot51!}{(\ln{2})^{51}} \cdot \lim\limits_{n\to\infty} \dfrac{1}{2^n} = 0 $ from ratio test we observed that $2^n$ grows faster than $n^{51} + n^{49}$
+        \item so we have shown that $(n^{51} + n^{49})$ is $O(2^n)$
+        
+    \end{enumerate}
+    \item $(2^n)$ is $O(5^n)$
+    \begin{enumerate} [1)]
+        \item $2 \leq 5$
+        \item $2^n \leq 5^n$(take nth exponent)
+        \item so we have shown that $(2^n)$ is $O(5^n)$
+    \end{enumerate}
+    \item $(5^n)$ is $O((n!)^2)$
+    \begin{enumerate} [1)]
+        \item let $f(n) = \dfrac{(n!)^2}{5^n}$
+        \item $L = \lim\limits_{n\to\infty} \dfrac{f(n+1)}{f(n)} = \lim\limits_{n\to\infty} \dfrac{((n+1)!)^2}{5^{(n+1)}} \cdot \dfrac{5^n}{(n!)^2} = \lim\limits_{n\to\infty} \dfrac{(n+1)^2}{5} = \infty$
+        \item for $n \in \mathbb{Z}^{+}, L \geq 1 $
+        \item as a result from ratio test $(n!)^2$ is grows faster than $5^n$
+        \item so we have shown that $(5^n)$ is $O((n!)^2)$
+        
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Answer 5}
+\begin{enumerate}[a)]
+    \item gcd(94,134) = 2
+    \begin{enumerate}[1)]
+        \item $134 = 94 \times 1 + 40 $
+        \item $94 = 40 \times 2 + 14$
+        \item $40 = 14\times2 + 12$
+        \item $14 = 12\times1 + 2$
+        \item $12= 2\times6 + 0$
+    \end{enumerate}
+    \item Goldbach's conjecture states that every even integer greater than 2 is the sum of two primes.\\
+    We will show that this statement is equvalent to that every integer greater than 5 is the sum of three primes  
+    \begin{enumerate}[1)]
+        \item let n be an integer greater than 5
+        \item if $n$ is odd
+        \begin{enumerate}[2.1)]
+            \item we can write $n = 3 + (n-3)$ and $(n-3)$ must be even.
+            \item $n-3 = p + q$ where $p$ and $q$ prime numbers (since $(n-3)$ is an even integer greater than 2 we can use Goldbach's conjecture)
+            \item therefore we have written $n = 3 + p + q$ as the sum of three primes
+        \end{enumerate}
+        \item if $n$ is even
+        \begin{enumerate}[3.1)]
+            \item we can write $n=2 + (n-2)$ and $(n-2)$ must be even.
+            \item $n-2 = p + q$ where $p$ and $q$ prime numbers (since $(n-2)$ is an even integer greater than 2 we can use Goldbach's conjecture)
+            \item therefore we have written $n = 2 + p + q$ as the sum of three primes
+        \end{enumerate}
+        \item for the converse assume that every integer greater than 5 is the sum of three primes
+        \begin{enumerate}[4.1)]
+            \item let n be an even integer greater than 2
+            \item by assumption we can write $(n+2)$ as the sum of three primes $(n+2) = p + q + r$ $p,q,r$ prime numbers 
+            \item since $(n+2)$ is even one of the prime numbers should be 2 (say $r=2$)
+            \item so we have $n+2 = 2 + p + q$
+            \item we have shown that $n = p+q$
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

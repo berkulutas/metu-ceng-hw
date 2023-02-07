@@ -1,0 +1,171 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+
+\begin{document}
+
+\section*{Student Information }
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Berk Ulutaş \\
+Id Number :  2522084 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+
+To construct the proof let $P(n)$ be the proposition "$6^{2n}-1$ is divisible by both 5 and 7. For $n \in N^{+}$"
+\noindent 
+
+\begin{enumerate}[1)]
+
+    \item 
+        \subsection*{Basis Step}
+           We must show the statement is true for $n=1$. The statement $P(1)$ is true because $6^{2} -1 = 35 $ and it is divisible by both 5 and 7. \\
+           
+    \item
+        \subsection*{Inductive Step}
+            For the inductive hypothesis we assume that $P(k)$ is true; that is we assume that $6^{2k}-1$ is divisible by both 5 and 7. For arbitrary $k \in N^{+}$ \\
+            We must show $P(k+1) = 6^{2 \cdot (k+1)} -1$ is divisible by both 5 and 7.
+            \begin{align*}
+                P(k+1) &= 6^{2 \cdot (k+1)} -1 \\
+                &= 6^{2k+2} -1 \\
+                &= 36\cdot6^{2k} -1 \\
+                &= (35\cdot6^{2k}) + (6^{2k} -1) \\
+            \end{align*}
+
+
+            clearly the first term $35 \cdot 6^{2k}$ is divisible by both 5 and 7. Using the inductive hypothesis, we conclude that the second term $6^{2k}-1$ is divisible by both 5 and 7. This completes the inductive step.\\
+
+            Hence, $6^{2n}-1$ is divisible by both 5 and 7 by induction.
+            
+           
+\end{enumerate}{}
+\pagebreak
+
+
+\section*{Answer 2}
+\noindent 
+
+\begin{enumerate}[1)]
+    \item 
+        \subsection*{Basis Step}
+            We must show the statement is true for $ n = 0$ which is the smallest value of n for this inequality. \\
+            $H_{n} \leq 9^n $ must be satisfied for $ n= 0$ \\
+            $H_{0} \leq 9^0 $ is true since $H_{0}$ is given as 1. Same as $ H_{1}$ and $H_{2}$\\
+            $H_{1} = 5\leq 9^1$ \\
+            $H_{2} = 7\leq 9^2$
+    \item
+        \subsection*{Inductive Step}
+            Assume that $H_{j} \leq 9^j$ for $ 0 \leq j \leq k $ where $ k \geq 2$ We must show that $H_{k+1} \leq 9^{k+1}$ to prove it is true for all values of n. 
+            $$H_{k+1} = 8H_{k} + 8H_{k-1} + 9H_{k-2}$$
+            
+            since we assumed $H_{j}$ is true where $0 \leq j \leq k$ , $H_{k} \leq 9^{k}, H_{k-1} \leq 9^{k-1} , H_{k-2} \leq 9^{k-2}$ we can write this inequality\\
+            $$8H_{k} + 8H_{k-1} + 9H_{k-2}\leq 8 \cdot 9^{k} + 8 \cdot 9^{k-1} + 9 \cdot 9^{k-2} $$
+            $$ 8H_{k} + 8H_{k-1} + 9H_{k-2}\leq 8 \cdot 9^{k} + 8 \cdot 9^{k-1} + 9^{k-1}$$
+            $$ 8H_{k} + 8H_{k-1} + 9H_{k-2}\leq 8 \cdot 9^{k} + 9 \cdot 9^{k-1} $$
+            $$ 8H_{k} + 8H_{k-1} + 9H_{k-2}\leq 8 \cdot 9^{k} +  9^{k} $$
+            $$ 8H_{k} + 8H_{k-1} + 9H_{k-2}\leq 9 \cdot 9^{k} $$
+            $$ 8H_{k} + 8H_{k-1} + 9H_{k-2}\leq 9^{k+1} $$
+            $$ H_{k+1} \leq 9^{k+1}$$
+            
+            Hence, $H_n \leq 9^n$, for all $n \in  N$ by induction.
+\end{enumerate}{}
+\pagebreak
+
+\section*{Answer 3}
+To construct solution we can group possible arrangements according to $k = $ first zero position of consecutive four zero part. 
+
+\begin{itemize}
+    \item For $ k =1 $ we have $2^4$ strings (0000****)
+    \item For $ k =2 $ we have $2^3$ strings (10000***)
+    \item For $ k =3 $ we have $2^3$ strings (*10000**)
+    \item For $ k =4 $ we have $2^3$ strings (**10000*)
+    \item For $ k =5 $ we have $2^3$ strings (***10000)
+\end{itemize}
+This grouping gives us to the number of strings with at least 4 consecutive zeros is $ 2^4 + 4\cdot 2^3 = 48$. By symmetry, the number of strings with at least 4 consecutive ones is the same. However, in this case we would have counted 11110000 and 00001111 twice. \\ \\Hence the total number is $ 48 + 48 - 2 = 94$
+
+\pagebreak
+
+\section*{Answer 4}
+We need to choose 1 star from 10 distinct stars, 2 habitable planet from 20 distinct habitable planets and 8 non-habitable planet from 80 distinct habitable planets
+\begin{itemize}
+    \item 1 star from 10 distinct stars $C(10,1) = \dfrac{10!}{1!\cdot9!}$
+    \item 2 habitable planet from 20 distinct habitable planets $C(20,2) = \dfrac{20!}{2!\cdot18!}$
+    \item 8 non-habitable planet from 80 distinct non-habitable planets $C(80,8) = \dfrac{80!}{8!\cdot72!}$
+\end{itemize}
+We can choose $\dfrac{10!}{1!\cdot9!} \cdot \dfrac{20!}{2!\cdot18!} \cdot \dfrac{80!}{8!\cdot72!}$ different star and planet sets by product rule. \\ \\
+Now we need to arrange planets around the star such that there are at least 6 non-habitable planets between 2 habitable planets. There can be 6, 7 or 8 planets between 2 habitable planets \\\\Let $H_i$ represents habitable planet and $*$ represents non-habitable planets.
+\begin{itemize}
+    \item 6 non-habitable planets between 2 habitable planets. There can be 3 different arrangement.
+    \begin{itemize}
+        \item $H_1, *, *, *, *, *, *, H_2, *, *$
+        \item $*, H_1, *, *, *, *, *, *, H_2, *$
+        \item $*, *,H_1, *, *, *, *, *, *, H_2$
+    \end{itemize}
+    \item 7 non-habitable planets between 2 habitable planets.There can be 2 different arrangement.
+    \begin{itemize}
+        \item $H_1, *, *, *, *, *, *, *, H_2, *$
+        \item $*, H_1, *, *, *, *, *, *, *, H_2$
+    \end{itemize}
+    \item 8 non-habitable planets between 2 habitable planets. There can be 1 different arrangement.
+    \begin{itemize}
+        \item $H_1, *, *, *, *, *, *, *, *, H_2$
+    \end{itemize}
+    \item We can distribute 2 habitable planets $2!$ and 8 non-habitable planets $8!$ and there is 6 six different arrangements shown above. Total number of arrangement of planets around star is $ 6\cdot2!\cdot8!$ for one set.
+\end{itemize}
+We showed above we can choose $\frac{10!}{1!\cdot9!} \cdot \frac{20!}{2!\cdot18!} \cdot \frac{80!}{8!\cdot72!}$ different star and planet set and, for one set we have $6\cdot2!\cdot8!$ different arrangements. So by product rule our general result is :
+$$\dfrac{10!}{1!\cdot9!} \cdot \dfrac{20!}{2!\cdot18!} \cdot \dfrac{80!}{8!\cdot72!} \cdot 6\cdot2!\cdot8!$$
+\pagebreak
+\section*{Answer 5}
+\paragraph{a)} Let $S(n)$ is the number of ways to jump n cells. Robot can move 1st cell with 1 way. 2nd cell with 2 ways and 3rd cell with 4 ways.
+\begin{center}
+    \begin{tabular}{c|c|c}
+        1 & 2 & 3\\
+        \hline
+        1 & 1+1 & 1+1+1 \\
+        &2& 1+2 \\
+        && 2+1\\
+        && 3
+    \end{tabular}
+\end{center}
+Robot can go nth cell by 
+\begin{itemize}
+    \item go (n-1)th cell and jump 1 cell
+    \item go (n-2)th cell and jump 2 cell
+    \item go (n-3)th cell and jump 3 cell
+\end{itemize}
+We can write this recurrence relation as follows for $ n >3 $: $$S(n) = S(n-1) + S(n-2) + S(n-3)$$
+\paragraph{b)} Initial conditions are
+\begin{itemize}
+    \item $S(1) = 1$
+    \item $S(2) = 2$
+    \item $S(3) = 4$
+\end{itemize}
+\paragraph{c)}
+$$S(4) = S(3) + S(2) + S(1) = 7$$
+$$S(5) = S(4) + S(3) + S(2) = 13$$
+$$S(6) = S(5) + S(4) + S(3) = 24$$
+$$S(7) = S(6) + S(5) + S(4) = 44$$
+$$S(8) = S(7) + S(6) + S(5) = 81$$
+$$S(9) = S(8) + S(7) + S(6) = 149$$
+
+
+\end{document}
+
+
