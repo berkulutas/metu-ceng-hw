@@ -1,0 +1,88 @@
+The active tab is tab 1
+i
+n
+aaa
+
+fff
+t
+ooo
+
+The active tab is tab 0
+i
+n
+aaa
+
+fff
+t
+ooo
+
+q
+zz
+c
+
+ppp
+g
+jj
+
+The active tab is tab 2
+q
+zz
+c
+
+d
+ee
+dd
+
+yyy
+eee
+v
+
+The active tab is tab 1
+q
+zz
+c
+
+d
+ee
+dd
+
+The active tab is tab 0
+q
+zz
+c
+
+The active tab is tab 0
+q
+zz
+c
+
+zz
+ww
+h
+
+jj
+ddd
+o
+
+The active tab is tab 1
+jj
+ddd
+o
+
+pp
+rr
+iii
+
+The active tab is tab 2
+jj
+ddd
+o
+
+pp
+rr
+iii
+
+nn
+aa
+f
+

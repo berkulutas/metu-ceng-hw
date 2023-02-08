@@ -1,0 +1,258 @@
+The active tab is tab 3
+c
+aa
+rrr
+
+
+
+
+
+x
+kk
+b
+
+q
+q
+e
+
+j
+rr
+fff
+
+fff
+u
+v
+
+ee
+bbb
+hh
+
+e
+yyy
+xx
+
+h
+ww
+zz
+
+The active tab is tab 0
+
+
+
+
+The active tab is tab 2
+ee
+zz
+oo
+
+l
+k
+zz
+
+ttt
+qqq
+lll
+
+ss
+gg
+vvv
+
+p
+aaa
+vv
+
+ooo
+ggg
+lll
+
+zz
+tt
+kk
+
+
+
+
+
+The active tab is tab 2
+t
+r
+tt
+
+ttt
+e
+e
+
+y
+rr
+tt
+
+ppp
+kk
+p
+
+bb
+ll
+z
+
+
+
+
+
+www
+j
+i
+
+The active tab is tab 3
+
+
+
+
+ii
+xxx
+ddd
+
+c
+k
+oo
+
+zzz
+y
+gg
+
+r
+nnn
+xxx
+
+xxx
+iii
+tt
+
+The browser is empty
+The active tab is tab 0
+
+
+
+
+The active tab is tab 0
+
+
+
+
+The browser is empty
+The active tab is tab 0
+
+
+
+
+The active tab is tab 0
+
+
+
+
+The active tab is tab 0
+
+
+
+
+The active tab is tab 0
+
+
+
+
+The active tab is tab 0
+
+
+
+
+The active tab is tab 2
+
+
+
+
+
+
+
+
+
+
+
+
+The active tab is tab 2
+
+
+
+
+
+
+
+
+
+
+
+
+The active tab is tab 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Window is empty
+The list is empty.
+The active tab is tab 0
+
+
+
+
+The active tab is tab 1
+
+
+
+
+
+
+
+
+The active tab is tab 0
+
+
+
+
+The active tab is tab 1
+
+
+
+
+
+
+
+
+The active tab is tab 2
+
+
+
+
+
+
+
+
+
+
+
+
+Window is empty
+The list is empty.

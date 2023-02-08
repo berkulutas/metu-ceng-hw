@@ -1,0 +1,46 @@
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+The active tab is tab 0
+ccc
+www
+ss
+
+The active tab is tab 0
+ccc
+www
+ss
+
+The active tab is tab 0
+i
+e
+qqq
+
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+The active tab is tab 0
+uu
+lll
+ddd
+

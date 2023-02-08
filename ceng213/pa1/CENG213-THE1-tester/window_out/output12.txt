@@ -1,0 +1,61 @@
+The active tab is tab 1
+
+
+
+
+s
+fff
+a
+
+The active tab is tab 0
+
+
+
+
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+The active tab is tab 1
+o
+w
+sss
+
+f
+zz
+ee
+
+The active tab is tab 0
+o
+w
+sss
+
+The active tab is tab 0
+o
+w
+sss
+
+The active tab is tab 0
+o
+w
+sss
+
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+The active tab is tab 0
+tt
+hh
+oo
+
+The active tab is tab 0
+tt
+hh
+oo
+
+The active tab is tab 0
+b
+kk
+jjj
+

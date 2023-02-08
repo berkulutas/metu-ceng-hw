@@ -1,0 +1,107 @@
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+The active tab is tab 0
+qq
+hh
+kk
+
+The active tab is tab 1
+qq
+hh
+kk
+
+bbb
+pp
+e
+
+The active tab is tab 1
+qq
+hh
+kk
+
+bbb
+pp
+e
+
+The active tab is tab 1
+bbb
+pp
+e
+
+qq
+hh
+kk
+
+Window is empty
+The list is empty.
+The active tab is tab 1
+p
+rr
+nnn
+
+nn
+ff
+q
+
+The active tab is tab 1
+p
+rr
+nnn
+
+nn
+ff
+q
+
+The active tab is tab 1
+nn
+ff
+q
+
+hh
+a
+vv
+
+p
+rr
+nnn
+
+The active tab is tab 4
+nn
+ff
+q
+
+hh
+a
+vv
+
+ddd
+jjj
+lll
+
+zzz
+xx
+g
+
+p
+rr
+nnn
+
+The active tab is tab 3
+nn
+ff
+q
+
+hh
+a
+vv
+
+ddd
+jjj
+lll
+
+zzz
+xx
+g
+

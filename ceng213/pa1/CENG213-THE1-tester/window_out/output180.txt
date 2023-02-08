@@ -1,0 +1,89 @@
+The active tab is tab 0
+ww
+sss
+a
+
+The active tab is tab 0
+ww
+sss
+a
+
+The active tab is tab 0
+ww
+sss
+a
+
+The active tab is tab 0
+ww
+sss
+a
+
+The active tab is tab 0
+ww
+sss
+a
+
+The active tab is tab 1
+ww
+sss
+a
+
+ccc
+nn
+ooo
+
+The active tab is tab 2
+ww
+sss
+a
+
+ccc
+nn
+ooo
+
+bb
+uu
+g
+
+The active tab is tab 0
+ww
+sss
+a
+
+The active tab is tab 1
+dd
+s
+mmm
+
+kk
+n
+aaa
+
+The active tab is tab 0
+dd
+s
+mmm
+
+The active tab is tab 0
+dd
+s
+mmm
+
+The active tab is tab 0
+dd
+s
+mmm
+
+The active tab is tab 2
+dd
+s
+mmm
+
+l
+bbb
+ii
+
+hh
+ttt
+ddd
+

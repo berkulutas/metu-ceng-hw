@@ -1,0 +1,37 @@
+The active tab is tab 0
+k
+q
+g
+
+Window is empty
+The list is empty.
+The active tab is tab 0
+l
+ttt
+aaa
+
+The active tab is tab 0
+w
+x
+rr
+
+The active tab is tab 0
+w
+x
+rr
+
+The active tab is tab 0
+w
+x
+rr
+
+The active tab is tab 0
+w
+x
+rr
+
+The active tab is tab 0
+w
+x
+rr
+

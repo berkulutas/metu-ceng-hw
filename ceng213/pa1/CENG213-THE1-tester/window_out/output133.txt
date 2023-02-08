@@ -1,0 +1,176 @@
+The active tab is tab 0
+qqq
+s
+ggg
+
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+The active tab is tab 3
+rrr
+kk
+z
+
+kk
+xx
+n
+
+jj
+n
+c
+
+aa
+ii
+h
+
+The active tab is tab 3
+rrr
+kk
+z
+
+kk
+xx
+n
+
+jj
+n
+c
+
+aa
+ii
+h
+
+The active tab is tab 1
+rrr
+kk
+z
+
+kk
+xx
+n
+
+jj
+n
+c
+
+aa
+ii
+h
+
+The active tab is tab 1
+rrr
+kk
+z
+
+aa
+ii
+h
+
+kk
+xx
+n
+
+jj
+n
+c
+
+The active tab is tab 1
+rrr
+kk
+z
+
+aa
+ii
+h
+
+kk
+xx
+n
+
+jj
+n
+c
+
+The active tab is tab 1
+rrr
+kk
+z
+
+aa
+ii
+h
+
+kk
+xx
+n
+
+jj
+n
+c
+
+The active tab is tab 2
+rrr
+kk
+z
+
+jj
+n
+c
+
+ppp
+b
+ww
+
+o
+ooo
+dd
+
+uuu
+vv
+c
+
+The active tab is tab 2
+rrr
+kk
+z
+
+jj
+n
+c
+
+ppp
+b
+ww
+
+o
+ooo
+dd
+
+uuu
+vv
+c
+
+The active tab is tab 0
+q
+zz
+e
+
+rrr
+kk
+z
+
+jj
+n
+c
+
+o
+ooo
+dd
+
+uuu
+vv
+c
+

@@ -1,0 +1,60 @@
+The active tab is tab 3
+
+
+
+
+ddd
+mm
+u
+
+f
+ttt
+oo
+
+ll
+zzz
+tt
+
+The active tab is tab 0
+sss
+sss
+nnn
+
+
+
+
+
+ddd
+mm
+u
+
+f
+ttt
+oo
+
+The active tab is tab 1
+sss
+sss
+nnn
+
+
+
+
+
+ddd
+mm
+u
+
+f
+ttt
+oo
+
+Window is empty
+The list is empty.
+The active tab is tab 0
+qq
+ss
+x
+
+Window is empty
+The list is empty.

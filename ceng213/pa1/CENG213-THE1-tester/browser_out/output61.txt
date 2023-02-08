@@ -1,0 +1,293 @@
+The active tab is tab 3
+q
+cc
+jjj
+
+oo
+ooo
+tt
+
+www
+c
+ooo
+
+
+
+
+
+w
+rrr
+hh
+
+q
+ww
+yyy
+
+kk
+ttt
+xx
+
+The active tab is tab 0
+ll
+s
+ccc
+
+mmm
+g
+ww
+
+ccc
+k
+ttt
+
+iii
+k
+ppp
+
+
+
+
+
+nnn
+ccc
+hhh
+
+The active tab is tab 3
+lll
+jj
+yy
+
+nn
+kkk
+jjj
+
+www
+yyy
+aa
+
+y
+y
+jjj
+
+n
+yyy
+gg
+
+
+
+
+
+kk
+pp
+t
+
+j
+vv
+rrr
+
+The active tab is tab 3
+yy
+bb
+pp
+
+
+
+
+
+u
+mmm
+ppp
+
+jjj
+mm
+ppp
+
+pp
+dd
+g
+
+uu
+ww
+yy
+
+xxx
+ggg
+qqq
+
+gg
+iii
+ccc
+
+bb
+iii
+iii
+
+The active tab is tab 26
+q
+cc
+jjj
+
+oo
+ooo
+tt
+
+www
+c
+ooo
+
+
+
+
+
+ll
+s
+ccc
+
+mmm
+g
+ww
+
+ccc
+k
+ttt
+
+iii
+k
+ppp
+
+
+
+
+
+nnn
+ccc
+hhh
+
+lll
+jj
+yy
+
+nn
+kkk
+jjj
+
+www
+yyy
+aa
+
+y
+y
+jjj
+
+n
+yyy
+gg
+
+
+
+
+
+kk
+pp
+t
+
+j
+vv
+rrr
+
+yy
+bb
+pp
+
+
+
+
+
+u
+mmm
+ppp
+
+jjj
+mm
+ppp
+
+pp
+dd
+g
+
+uu
+ww
+yy
+
+xxx
+ggg
+qqq
+
+gg
+iii
+ccc
+
+bb
+iii
+iii
+
+w
+rrr
+hh
+
+q
+ww
+yyy
+
+kk
+ttt
+xx
+
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+The active tab is tab 1
+
+
+
+
+
+
+
+
+The browser is empty
+The browser is empty
+The browser is empty
+The browser is empty
+The browser is empty
+The browser is empty
+The browser is empty
+The browser is empty
+The browser is empty
+The active tab is tab 0
+
+
+
+
+The active tab is tab 0
+
+
+
+
+The active tab is tab 0
+
+
+
+
+Window is empty
+The list is empty.
+The active tab is tab 0
+
+
+
+
+Window is empty
+The list is empty.

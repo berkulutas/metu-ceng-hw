@@ -1,0 +1,39 @@
+The active tab is tab 0
+bbb
+gg
+aaa
+
+The active tab is tab 0
+yyy
+zz
+d
+
+The active tab is tab 1
+yyy
+zz
+d
+
+qq
+y
+c
+
+The active tab is tab 0
+p
+zzz
+d
+
+The active tab is tab 0
+p
+zzz
+d
+
+The active tab is tab 0
+o
+mm
+ii
+
+The active tab is tab 0
+jj
+i
+x
+

@@ -1,0 +1,207 @@
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+The active tab is tab 0
+rr
+f
+y
+
+The active tab is tab 0
+rr
+f
+y
+
+Window is empty
+The list is empty.
+The active tab is tab 1
+i
+sss
+zz
+
+aa
+p
+z
+
+The active tab is tab 0
+i
+sss
+zz
+
+Window is empty
+The list is empty.
+The active tab is tab 1
+p
+vv
+ww
+
+ggg
+zz
+xx
+
+The active tab is tab 5
+p
+vv
+ww
+
+ggg
+zz
+xx
+
+i
+z
+bb
+
+gg
+c
+hhh
+
+www
+n
+yyy
+
+cc
+a
+pp
+
+The active tab is tab 5
+p
+vv
+ww
+
+ggg
+zz
+xx
+
+i
+z
+bb
+
+www
+n
+yyy
+
+cc
+a
+pp
+
+pp
+nnn
+t
+
+gg
+c
+hhh
+
+The active tab is tab 5
+p
+vv
+ww
+
+ggg
+zz
+xx
+
+i
+z
+bb
+
+www
+n
+yyy
+
+cc
+a
+pp
+
+gg
+c
+hhh
+
+The active tab is tab 5
+p
+vv
+ww
+
+ggg
+zz
+xx
+
+i
+z
+bb
+
+www
+n
+yyy
+
+cc
+a
+pp
+
+gg
+c
+hhh
+
+The active tab is tab 7
+p
+vv
+ww
+
+ggg
+zz
+xx
+
+i
+z
+bb
+
+www
+n
+yyy
+
+cc
+a
+pp
+
+gg
+c
+hhh
+
+gg
+v
+ddd
+
+l
+f
+ddd
+
+The active tab is tab 5
+p
+vv
+ww
+
+ggg
+zz
+xx
+
+i
+z
+bb
+
+www
+n
+yyy
+
+cc
+a
+pp
+
+gg
+v
+ddd
+
+gg
+c
+hhh
+

@@ -1,0 +1,58 @@
+Window is empty
+The list is empty.
+Window is empty
+The list is empty.
+The active tab is tab 0
+v
+ppp
+zzz
+
+Window is empty
+The list is empty.
+The active tab is tab 0
+p
+nn
+ccc
+
+The active tab is tab 0
+p
+nn
+ccc
+
+The active tab is tab 0
+p
+nn
+ccc
+
+ggg
+aaa
+mm
+
+The active tab is tab 0
+ggg
+aaa
+mm
+
+The active tab is tab 0
+ggg
+aaa
+mm
+
+The active tab is tab 1
+ggg
+aaa
+mm
+
+yyy
+zz
+vvv
+
+The active tab is tab 1
+ggg
+aaa
+mm
+
+ll
+hhh
+vvv
+
