@@ -1,0 +1,155 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+\usepackage[shortlabels]{enumitem}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{multicol}
+\usepackage{matlab-prettifier}
+
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Berk Ulutaş \\
+Id Number : 2522084 \\
+
+\section*{a)}
+To conduct a Monte Carlo study, we need to determine study size. We can use Normal Approximation as given in the homework text. To do this we will use the formula from the textbook.
+$$N \geq 0.25 (\dfrac{z_{\alpha/2}}{\varepsilon})^2$$
+
+We know $z_\alpha = \Phi^{-1}(1-\alpha)$. To find $z_{\alpha/2}$ with $\alpha = 0.02$. We can use $norminv$ function in octave. $$ z_{\alpha/2}= z_{0.01} = norminv(1-0.01) = 2.3263$$
+
+Let's substitute what we found for $z_{\alpha/2}$ and given $\varepsilon$ to find the value of N.
+
+$$N \geq 0.25 (\frac{2.3263}{0.03})^2$$
+$$N \geq 1503.242136$$
+
+We can Take $N = 1504 $ as our Monte Carlo Study size. \\
+
+Since all ships have Poisson distribution, we can use Algorithm 5.1 and Example 5.9 from book to generate a Poisson variable with parameter $\lambda$. Here is the sample code for container ships: \\
+
+\begin{lstlisting}[style=Matlab-editor]
+% container ships
+lambda = 40;
+U = rand; i = 0;
+F = exp(-lambda);
+while (U>=F);
+    i=i+1;
+    F = F+exp(-lambda)*lambda^i/gamma(i+1);
+end;
+container_ship = i;
+\end{lstlisting}
+
+
+Since all cargo weights are gamma distributed random variable, we can use Algorithm 5.2 and Example 5.11 from book to generate a Gamma variable with parameters $\lambda$(\texttt{lambda}) and $\alpha$(\texttt{alpha}). Here is the sample code: \\
+
+\begin{lstlisting}[style=Matlab-editor]
+X = sum (-1/lambda * log(rand(alpha,1)))
+\end{lstlisting}
+
+We need to calculate cargo weight for each ship separately. So we need to create new gamma variable for each ship. Here is the sample code for container ships:
+
+\begin{lstlisting}[style=Matlab-editor]
+for j=1:container_ship;  % summing total weight of container ships
+    X = sum(-1/0.05 * log(rand(100,1)));
+    curr_weight = curr_weight + X;
+end;
+\end{lstlisting}
+
+With attached octave code(on last page), after conducting a Monte Carlo Study, the estimated probability of the total weight of all the cargo unloaded at the port in a day exceeds 300000 tons is \textbf{0.111702}.
+
+\section*{b)}
+Based on conducted Monte Carlo Study in part (a), estimated  total weight, of all the cargo that is unloaded at the port in a day is \textbf{259219.493342}. To do that, we have used \texttt{mean} function on our \texttt{total\_weight} vector which keeps calculated total weight of each simulation run.
+
+\section*{c)}
+Based on conducted Monte Carlo Study in part (a), estimated  standard deviation is \textbf{32594.014180}.\\
+
+Since we know $$Std(X) = \dfrac{\sigma}{\sqrt{N}}$$
+the estimator $X$ is more reliable if $\sigma$ is small and $N$ is large. So, we can use larger study sizes to decrease our $Std(X)$.
+
+By selecting our Monte Carlo study size based on $\alpha = 0.02$ and $\varepsilon = 0.03$, we can claim that our study produces accurate outcomes within a 0.03 error margin approximately 98\% of the time.
+
+
+\pagebreak
+\begin{lstlisting}[style=Matlab-editor]
+N=1504; % size of Monte Carlo Simulation calculated with formula
+total_weight=zeros(N,1); % keep weight of ships for each run
+
+for k=1:N;
+	curr_weight = 0; % the total weight for current run
+
+	% bulk carriers
+	lambda = 50;
+	U = rand; i = 0;
+	F = exp(-lambda);
+	while (U>=F);
+		i=i+1;
+		F = F+exp(-lambda)*lambda^i/gamma(i+1);
+	end;
+	bulk_carrier = i;
+	
+	% container ships
+	lambda = 40;
+	U = rand; i = 0;
+	F = exp(-lambda);
+	while (U>=F);
+		i=i+1;
+		F = F+exp(-lambda)*lambda^i/gamma(i+1);
+	end;
+	container_ship = i;
+	
+	% oil tankers
+	lambda = 25;
+	U = rand; i = 0;
+	F = exp(-lambda);
+	while (U>=F);
+		i=i+1;
+		F = F+exp(-lambda)*lambda^i/gamma(i+1);
+	end;
+	oil_tanker = i;
+	
+	% total weight of bulk carriers
+	for j=1:bulk_carrier; 
+		X = sum(-1/0.1 * log(rand(60,1)));
+		curr_weight = curr_weight + X;
+	end;
+
+	% total weight of container ships
+	for j=1:container_ship;  
+		X = sum(-1/0.05 * log(rand(100,1)));
+		curr_weight = curr_weight + X;
+	end;
+
+	% total weight of oil tankers
+	for j=1:oil_tanker; 
+		X = sum(-1/0.02 * log(rand(120,1)));
+		curr_weight = curr_weight + X;
+	end;
+
+	total_weight(k) = curr_weight;
+end;
+
+
+fprintf('Estimated probability = %f\n',mean(total_weight>300000));
+fprintf('Expected weight = %f\n',mean(total_weight));
+fprintf('Standard deviation = %f\n',std(total_weight));
+\end{lstlisting}
+
+\includegraphics[width=\textwidth] {images/ss.png}
+\end{document}
