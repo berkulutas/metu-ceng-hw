@@ -1,0 +1,166 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+\usepackage[shortlabels]{enumitem}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Berk Ulutaş \\
+Id Number : 2522084 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+
+\subsection*{a)}
+We calculate the expected value $E(X) = \sum\limits_{x} xP(x)$. Since the probabilities of all faces on a die are equal, we can write it as:
+\begin{itemize}
+    \item $E(B) = \dfrac{1}{6} \cdot (1+2+3+4+5+6) = 3.5 $ 
+    \item $E(Y) = \dfrac{1}{8} \cdot (1+1+1+3+3+3+4+8) = 3 $ 
+    \item $E(R) = \dfrac{1}{10} \cdot (2+2+2+2+2+3+3+4+4+6) = 3 $
+\end{itemize}
+\subsection*{b)}
+
+To maximize the total value on three dice we need to choose the option which gives higher expected value.
+\begin{itemize}
+    \item Option 1: Rolling a single dice for each color.  $$E(X)= E(B)+E(Y)+E(R) = 3.5+3+3 =9.5$$
+    \item Option 2: Rolling three blue dice.
+    $$E(3B)= 3\cdot E(B) = 3 \cdot 3.5=10.5$$
+\end{itemize}
+Option 2 (Rolling three blue dice.) should be chosen since the expected value is higher. 
+\subsection*{c)} 
+If it is guaranteed that the yellow die's value will be 8 we can say that $E(Y) = 8$. Then
+\begin{itemize}
+    \item Option 1: Rolling a single dice for each color.  $$E(X)= E(B)+E(Y)+E(R) = 3.5+8+3 =14.5$$
+    \item Option 2: Rolling three blue dice.
+    $$E(3B)= 3\cdot E(B) = 3 \cdot 3.5=10.5$$
+\end{itemize}
+Option 1 (Rolling a single dice for each color.) should be chosen since the expected value is higher. 
+
+\subsection*{d)} 
+$R,B,Y$ denotes the events that red, blue, yellow die is picked respectively. The question asks for $P(R|3)$. From Bayes' Rule, we have
+$$P(R | 3) = \dfrac{P(3|R) \cdot P(R)}{P(3)}$$
+
+\begin{itemize}
+    \item $P(R) = P(B) = P(Y) = \dfrac{1}{3}$ (each color has equal probability)
+    \item $P(3|B) = \dfrac{1}{6}$, $P(3|Y) = \dfrac{3}{8}$, $P(3|R) = \dfrac{2}{10}$
+    \item $P(3) = \dfrac{1}{3} \cdot P(3|B) + \dfrac{1}{3} \cdot P(3|Y) + \dfrac{1}{3} \cdot P(3|R) = \dfrac{89}{360}$ (using law of total probability, since events are mutually exclusive and exhaustive. Choosing any of dice is $\frac{1}{3}$)
+\end{itemize}
+$$P(R | 3) = \dfrac{\dfrac{2}{10} \cdot \dfrac{1}{3}}{\dfrac{89}{360}} = \dfrac{24}{89} \approx 0.2697$$
+\subsection*{e)} 
+To get total value of 5, we have following combinations: 
+\begin{itemize}
+    \item Blue die: 1, Yellow die 4 
+    \item Blue die: 2, Yellow die 3 
+    \item Blue die: 4, Yellow die 1 
+\end{itemize}
+Now, calculate the probability of each of these combinations. (Since events are independent we can simply multiply to find probability both events happening together): 
+\begin{itemize}
+    \item $P\{\text{Blue die: 1}\} \cap P\{\text{Yellow die: 4}\}$
+    \begin{itemize}
+        \item $P\{\text{Blue die: 1}\}  = \frac{1}{6}, P\{\text{Yellow die: 4}\}= \frac{1}{8} $
+        \item $\dfrac{1}{6} \cdot \dfrac{1}{8} = \dfrac{1}{48}$
+    \end{itemize}
+    \item $P\{\text{Blue die: 2}\} \cap P\{\text{Yellow die: 3}\}$
+    \begin{itemize}
+        \item $P\{\text{Blue die: 2}\}  = \frac{1}{6}, P\{\text{Yellow die: 3}\}= \frac{3}{8} $
+        \item $\dfrac{1}{6} \cdot \dfrac{3}{8} = \dfrac{3}{48}$
+    \end{itemize}
+    \item $P\{\text{Blue die: 4}\} \cap P\{\text{Yellow die: 1}\}$
+    \begin{itemize}
+        \item $P\{\text{Blue die: 4}\}  = \frac{1}{6}, P\{\text{Yellow die: 1}\}= \frac{3}{8} $
+        \item $\dfrac{1}{6} \cdot \dfrac{1}{8} = \dfrac{3}{48}$
+    \end{itemize}
+\end{itemize}
+Finally, we need to add up the probability of all events happening to get overall probability
+$$\dfrac{1}{48} + \dfrac{3}{48} + \dfrac{3}{48} = \dfrac{7}{48}$$
+\section*{Answer 2}
+
+\subsection*{a)}
+We can think this question as binomial distribution with parameters $n = 80$ and $p = 0.025$ . Let X be denote the distributors of company A will offer a discount tomorrow.
+\begin{itemize}
+    \item  We try to find $P(X \geq 4)$
+    \item $P(X \geq 4) = 1 - P(X < 4)$
+    \item We can calculate $1 - (P(X=0) + P(X=1) + P(X=2) + P(X=3))$
+    \item $1-(\binom{80}{0} \cdot 0.025^{0} \cdot 0.975^{80} + \binom{80}{1} \cdot 0.025^{1} \cdot 0.975^{79} + \binom{80}{2} \cdot 0.025^{2} \cdot 0.975^{78} + \binom{80}{3} \cdot 0.025^{3} \cdot 0.975^{77})$
+    \item or we can use octave online to calculation with this query \verb|1-binocdf(3,80,0.025)|
+\end{itemize}
+\begin{equation*}
+    \begin{split}
+        P(X \geq 4) &= 1 - P(X < 4) \\
+                    &= \verb |1-binocdf(3,80,0.025) \\
+                    &= 0.1406  
+    \end{split}
+\end{equation*}
+
+\subsection*{b)} 
+To calculate the probability of getting a discount on a phone within two days, we can use the binomial distribution. Let X and Y be denote, the distributors of company A and B will offer a discount tomorrow, respectively.
+\begin{itemize}
+    \item First we need to calculate not getting discount on a specific day for each company
+    \item $P(X = 0) = \binom{80}{0}(0.025)^0(1-0.025)^{80} = 0.975^{80}$ 
+    \item $P(Y = 0) = \binom{1}{0}(0.1)^0(1-0.1)^{1} = 0.9^{1}$ 
+    \item Now, we calculate the probability of not getting a discount from both companies on a specific day. Since companies act independently we can simply multiply what we found: $$0.975^{80} \cdot 0.9^{1} = 0.1187$$
+    \item Next, we find the probability of not getting a discount from both companies in two days:
+    $$0.1187^{2}= 0.0141$$
+    \item Now, we calculate the probability of getting a discount within two days by subtracting the above probability from 1:
+    $$1-0.0141 = 0.9859$$
+    \item So, the probability of being able to buy a phone within two days is $\approx 0.986$
+\end{itemize}
+
+
+\section*{Answer 3}
+
+\begin{verbatim}
+    blue = [1 2 3 4 5 6];
+    yellow = [1 1 1 3 3 3 4 8];
+    red = [2 2 2 2 2 3 3 4 4 6];
+    
+    num_iterations = 5000;
+    total_value_option_1 = 0;
+    total_value_option_2 = 0;
+    num_cases_option_2_greater = 0;
+    
+    for i = 1:num_iterations
+        dice_11 = red(randi(length(red)));
+        dice_12 = yellow(randi(length(yellow)));
+        dice_13 = blue(randi(length(blue)));
+        
+        dice_21 = blue(randi(length(blue)));
+        dice_22 = blue(randi(length(blue)));
+        dice_23 = blue(randi(length(blue)));
+    
+        total_value_option_1 += dice_11 + dice_12 + dice_13;
+        total_value_option_2 += dice_21 + dice_22 + dice_23;
+    
+        if (dice_21 + dice_22 + dice_23) > (dice_11 + dice_12 + dice_13)
+            num_cases_option_2_greater++;
+        end
+    end
+    
+    avg_total_value_option_1 = total_value_option_1 / num_iterations
+    avg_total_value_option_2 = total_value_option_2 / num_iterations
+    percent_option_2_greater = num_cases_option_2_greater / num_iterations * 100
+    
+\end{verbatim} 
+\includegraphics[width=\textwidth]{octave-ss} \\ \\
+
+Based on the given results of 5000 tries, we can see that the average total value for Option 2 (10.499) is indeed higher than the average total value for Option 1 (9.537). Analysis results match the expected values, it means we did the analysis correctly. Additionally, the percentage of times where Option 2 results in a higher total value (56.2\%) supports the conclusion that Option 2 is the better strategy for maximizing the total value.
+
+\end{document}
