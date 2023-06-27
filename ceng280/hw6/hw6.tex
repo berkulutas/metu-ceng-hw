@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{ {imgs/} }
+\usepackage{listings}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\begin{document}
+
+\section*{Student Information}
+Full Name: Berk Ulutaş \\
+Id Number: 2522084 \\
+
+\section*{Answer 1}
+\begin{itemize}
+    \item Alan Turing was born in June 23 1912 and died in June 7 (i) \textbf{1954}.
+    \item Turing played a crucial role in breaking the (ii) \textbf{Enigma} code during World War II.
+    \item The now-famous (iii) \textbf{Turing Test} , proposed in his paper Computing Machinery and Intelligence (1950), is an attempt to define a standard for a machine to be called “intelligent".
+    \item One of his most-cited works, titled (iv) \textbf{"The Chemical Basis of Morphogenesis"} was published in 1952, which proposed a mechanism as to how inhomogeneous patterns in nature arise from symmetric starting states.
+    \item The 2014 movie titled (v) \textbf{"The Imitation Game"} aims to give a biographical portrait of Turing.
+\end{itemize}
+
+\section*{Answer 2}
+\subsection*{a)}
+$M = (K, \Sigma, \Delta, q_s, \{h\})$ \\ 
+$K = \{q_s, q_0, q_1, q_2, q_{loop}, h\}$ \\
+$\Sigma = \{a,b,\rhd, \sqcup\}$ \\ 
+$q_s$ is initial state \\
+$h$ is halting state \\ 
+
+Assuming initial configuration of $M$ of input $w$ in the form $(q_0, \rhd \underline{\sqcup} w)$
+and $\delta$ is given by following table \\
+
+\begin{tabular}{c|c|c}
+     $q$ & $\sigma$ & $\delta(q,\sigma)$\\
+     \hline
+     $q_s$ & $\sqcup$ & $(q_0,\rightarrow)$ \\
+     $q_s$ & $\rhd$ & $(q_s,\rightarrow)$ \\
+     $q_0$ & $a$ & $(q_0,\rightarrow)$ \\
+     $q_0$ & $b$ & $(q_1,\rightarrow)$ \\
+     $q_0$ & $\sqcup$ & $(q_{loop},\sqcup)$ \\
+     $q_0$ & $\rhd$ & $(q_0,\rightarrow)$ \\
+     $q_1$ & $a$ & $(q_1,\rightarrow)$ \\
+     $q_1$ & $b$ & $(q_2,\rightarrow)$ \\
+     $q_1$ & $\sqcup$ & $(q_{loop},\sqcup)$ \\
+     $q_1$ & $\rhd$ & $(q_1,\rightarrow)$ \\
+     $q_2$ & $a$ & $(q_{loop},a)$ \\
+     $q_2$ & $b$ & $(q_{loop},b)$ \\
+     $q_2$ & $\sqcup$ & $(h,\sqcup)$ \\
+     $q_2$ & $\rhd$ & $(q_2,\rightarrow)$ \\
+     $q_{loop}$ & $a$ & $(q_{loop},a)$ \\
+     $q_{loop}$ & $b$ & $(q_{loop},b)$ \\
+     $q_{loop}$ & $\sqcup$ & $(q_{loop},\sqcup)$ \\
+     $q_{loop}$ & $\rhd$ & $(q_{loop},\rightarrow)$
+\end{tabular}
+
+\includegraphics[scale=0.27] {q2a}
+\subsection*{b)}
+\includegraphics[scale=0.2] {q2b}
+
+\section*{Answer 3}
+
+\begin{itemize}
+    \item The Turing machine starts by copying the values of a and b onto the second and third tapes, respectively. The machine starts in the state where it reads from the first tape. If it reads a binary digit, it writes that digit on the second tape and moves right. If it reads a comma, it changes to a new state, where it reads a binary digit, writes on the third tape and moves right. This step ensures, a is copied onto tape 2 and b is copied onto tape 3.
+    \item Erase the content on tape 1, and copy tape 2 to tape 1. After this step we need to subtract 1 from b. Use $M_-$ to subtract 1. Update b on tape 3 with the result. (Since we know a and b are positive integers(said in discussion forum), do not need to worry about $b=0$ case.)
+    \item Enter a loop that will continue until b (on tape 3) becomes zero:
+    \begin{itemize}
+        \item Use $M_{\times}$ to multiply the current result on tape 1 (initially, this is a) with a from tape 2. Write the result back to tape 1.
+        \item Use $M_-$ to subtract 1 from b on tape 3. Update b on tape 3 with the result.
+        \item Check if b has become zero (by looking at tape 3). If it has, exit the loop. If it hasn't, repeat the loop.
+    \end{itemize}
+    \item When the machine exits the loop (because b has become zero), the computation is done. The first tape now contains the result of $a^b$, and the machine halts.
+\end{itemize}
+
+
+\end{document}
+
