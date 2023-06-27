@@ -1,0 +1,228 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+\usepackage[shortlabels]{enumitem}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Berk Ulutaş \\
+Id Number : 2522084 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+
+\subsection*{a)}
+Since servers are independent joint density function $f(t_A, t_B) = f_1(t_A)f_2(t_B)$
+\begin{itemize}
+    \item $f_1(t_A) = \frac{1}{100 - 0}$ and $f_2(t_B) = \frac{1}{100 - 0}$
+    \item 
+    \begin{math}
+      f_1(t_A)=\left\{
+        \begin{array}{ll}
+          \frac{1}{100}, & \mbox{$0\leq t_A \leq 100$}.\\
+          0, & \mbox{otherwise}.
+        \end{array}
+      \right.
+    \end{math}
+    \item 
+    \begin{math}
+      f_2(t_B)=\left\{
+        \begin{array}{ll}
+          \frac{1}{100}, & \mbox{$0\leq t_A \leq 100$}.\\
+          0, & \mbox{otherwise}.
+        \end{array}
+      \right.
+    \end{math}
+    \item 
+    \begin{math}
+      f(t_A,t_B)=\left\{
+        \begin{array}{ll}
+          \frac{1}{10^4}, & \mbox{$0 \leq t_A \leq 100$ and $0 \leq t_B \leq 100$}.\\
+          0, & \mbox{otherwise}.
+        \end{array}
+      \right.
+    \end{math}
+\end{itemize}
+To find joint cdf we need to integrate joint pdf $f(t_A, t_B)$. $F(t_A, t_B) = \int_{-\infty}^{t_B} \int_{-\infty}^{t_A}f(x,y)dxdy$
+\begin{equation*}
+      F(t_A,t_B)=\left\{
+        \begin{array}{ll}
+          \frac{t_A \cdot t_B}{10^4}, & \mbox{$0 \leq t_A \leq 100$ and $0 \leq t_B \leq 100$}.\\
+          \frac{t_A}{100}, & \mbox{$t_B > 100$ and $0 \leq t_A \leq 100$}. \\ 
+          \frac{t_B}{100}, & \mbox{$t_A > 100$ and $0 \leq t_B \leq 100$}. \\
+          1, & \mbox{$t_A > 100$ and $t_B > 100$}.
+        \end{array}
+      \right.
+\end{equation*}
+
+\subsection*{b)} 
+Question asks for $P\{t_A \leq 30 \cap 40 \leq t_B \leq 60\}$. To solve this we can integrate pdf function or use cdf function we have found.
+\begin{itemize}
+    \item $P\{t_A \leq 30 \cap 40 \leq t_B \leq 60\} = P\{t_A \leq 30 \cap t_B \leq 60\} - P\{t_A \leq 30 \cap  t_B < 40\}$
+    \item $P\{t_A \leq 30 \cap 40 \leq t_B \leq 60\} = F(30,60) - F(30,40) = \frac{30 \cdot 60}{10^4} - \frac{30 \cdot 40}{10^4} = 0.06$
+\end{itemize}
+
+\subsection*{c)}
+Question asks for $P\{t_A \leq t_B + 10\}$. To solve this we can integrate pdf function or we can visualize it. Figure 1 shows us to general picture. Blue area is equal to 1 since the integration of pdf funciton. The integration area which question asks for shown in Figure 1 with red highlight. To find this area, subtract the area of the blue triangle in the upper left corner from the area of the square. Multiplying the remaining area with one over the area of the square gives us the result. (Since we know area of blue square equals 1)
+\begin{itemize}
+    \item Area of Blue square = $100^2$.
+    \item Area of Blue triangle on left corner = $\frac{90^2}{2}=4050$
+    \item Red area = $\dfrac{1}{100^2} \cdot (10^4-4050 )= 0.595$
+    \item $P\{t_A \leq t_B + 10\} = 0.595$
+    
+\end{itemize}
+
+\includegraphics[scale =0.2] {imgs/fig2.png} Figure 1
+
+\subsection*{d)} 
+Question asks for $P\{ | t_A -t_B | \leq 20\} = P\{  -20 \leq t_A -t_B  \leq  20\}$. To solve this we can integrate pdf function or we can visualize it. Similarly the part c) Figure 2 shows us to general picture. Blue area is equal to 1 since the integration of pdf funciton. The integration area which question asks for shown in Figure 2 with red highlight. To find this area, subtract the area of the blue triangles in the upper left and lower right corners from the area of the square. Multiplying the remaining area with one over the area of the square gives us the result. (Since we know area of blue square equals 1)
+\begin{itemize}
+    \item Area of Blue square= $100^2$.
+    \item Area of Blue triangle on left corner = $\frac{80^2}{2}$
+    \item Area of Blue triangle on right corner =  $\frac{80^2}{2}$
+    \item Red area = $\dfrac{1}{10^4} \cdot (100^2-80^2) = 0.36$
+    \item $P\{ | t_A -t_B | \leq 20\} = 0.36$
+    
+\end{itemize}
+
+\includegraphics[scale =0.2] {imgs/fig3.png} Figure 2
+
+
+\section*{Answer 2}
+
+\subsection*{a)}
+
+Let $X$ denotes the number of frequent shoppers in the sample of 150 customers. Given that the random variable $X$ follows binomial distribution with parameters $p=0.6$ (probability of being frequent shopper) and $n=150$ (sample size). We want at least 65\% of the customers in the sample are frequent shoppers $150\cdot0.65 = 97.5$. Round it to 98 since we want to find at least 65\%. So question asks for $P= \{X\geq98\}$. Since $n$ is large we can use normal approximation to find probability using Central Limit Theorem.
+
+From Book Theorem 1 (page 94 4.19) states that:
+$$\textit{Binomial }(n,p) \approx \textit{Normal }(\mu = np, \sigma = \sqrt{np(1-p)})$$
+So $X$ approximately follows normal distribution with parameters $\mu = 90$ and $\sigma = 6$ 
+\begin{itemize}
+    \item Probability that this sample contains at least 98 frequent shopper is given by $P\{X\geq98-0.5\}$ using continuity correction
+    \item $P\{X\geq97.5\}$ = $1-P\{X < 97.5\}$
+    \item Standardize $P\{X < 97.5\}$:
+    \begin{itemize}
+        \item $P\{\frac{X- \mu}{\sigma} < \frac{97.5-90}{6}\}$
+        \item $P\{Z < 1.25\}$
+    \end{itemize}
+    \item $1- P\{Z < 1.25\}$ = $1-\Phi(1.25) = 0.1056$ ($\Phi(1.25) = 0.8944$ from book table A4 )
+    
+\end{itemize}
+
+
+\subsection*{b)}
+Similar to part a) Let $X$ denotes the number of rare shoppers in the sample. Given that random variable $X$ follows binomial distribution with parameters $p=0.1$ (probability of being rare shopper) and $n=150$ (sample size). We want no more than 15\% of the customers in the sample are rare shoppers $150\cdot0.15 = 22.5$. So question asks for $P= \{X < 23\}$. Since $n$ is large we can use normal approximation to find probability using Central Limit Theorem. \\
+
+From Theorem 1 from part a) X approximately follows normal distribution with parameters $\mu = 15$ and $\sigma = 3.67$
+\begin{itemize}
+    \item Probability that this sample contains no more than 23 rare shopper is given by $P\{X < 23-0.5\}$ using continuity correction 
+    \item Standardize $P \{X < 22.5\}$:
+    \begin{itemize}
+        \item $P \{\frac{X - \mu}{\sigma}< \frac{22.5 - 15}{3.67}\}$
+        \item $P\{Z < 2.04\}$
+    \end{itemize}
+    \item $P\{Z < 2.04\} = \Phi(2.04) = 0.9793$ (from book table A4 )
+\end{itemize}
+
+
+\section*{Answer 3}
+\begin{itemize}
+    \item To solve this question we can standardize and use Table A4 from book. For a Normal($\mu = 175, \sigma = 7$) variable X.
+    \item Let $P\{170 < X < 180\}$ denotes probability that adult's height between 170 cm and 180 cm.
+    \item Standardize: 
+    \item  $P\{\frac{170 - \mu}{\sigma} < \frac{X - \mu}{\sigma} < \frac{180 - \mu}{\sigma}\}$
+    \item $P\{\frac{170 - 175}{7} < Z < \frac{180 - 175}{7}\}$ = $P \{-0.71 < Z < 0.71\}$
+    \item $P\{170 < X < 180\}$ = $\Phi(0.71) - \Phi(-0.71)$
+    \item With this transformations we standardized it. After that we can calculate the result using table A4 from the book: 
+    \begin{itemize}
+        \item $\Phi(0.71) = 0.7611$
+        \item $\Phi(-0.71) = 0.2389$
+    \end{itemize}
+    \item $P\{170 < X < 180\}$ = $0.7611-0.2389 = 0.5223$
+\end{itemize}
+
+
+\section*{Answer 4}
+\subsection*{a)}
+\begin{verbatim}
+    mu = 175; 
+    sigma = 7;
+    
+    data = normrnd(mu, sigma, [2000, 1]);
+    
+    hist(data);
+    title('Distribution of Height');
+    xlabel('Height (cm)');
+    ylabel('Frequency');
+\end{verbatim}
+\includegraphics[width=\textwidth]{imgs/q4a.png}
+
+\subsection*{b)} 
+\begin{verbatim}
+    mu = 175;
+    
+    sigma_values = [6, 7, 8];
+    
+    x = linspace(mu-4*max(sigma_values), mu+4*max(sigma_values), 1000);
+    
+    for i = 1:numel(sigma_values)
+        y = normpdf(x, mu, sigma_values(i));
+        
+        plot(x, y, 'LineWidth', 2);
+        hold on;
+    end
+    
+    title('Distribution of Height');
+    xlabel('Height (cm)');
+    ylabel('Probability Density');
+    
+    legend('sigma = 6', 'sigma = 7', 'sigma = 8');
+\end{verbatim}
+\includegraphics[width=\textwidth] {imgs/q4b.png}
+
+\subsection*{c)} 
+\begin{verbatim}
+    mu = 175;     
+    sigma = 7;       
+    n = 150;       
+    p = zeros(1,2000);  
+    
+    for i = 1:2000
+        heights = normrnd(mu, sigma, 1, n);
+        prop = sum(heights >= 170 & heights <= 180) / n;
+        p(i) = prop;
+    end
+    
+    prob_45 = sum(p >= 0.45) / 2000;
+    prob_50 = sum(p >= 0.5) / 2000;
+    prob_55 = sum(p >= 0.55) / 2000;
+    
+    disp(['Probability of at least 45% of adults having height between 170cm and 180cm: ' num2str(prob_45)])
+    disp(['Probability of at least 50% of adults having height between 170cm and 180cm: ' num2str(prob_50)])
+    disp(['Probability of at least 55% of adults having height between 170cm and 180cm: ' num2str(prob_55)])
+\end{verbatim}
+\includegraphics[width=\textwidth] {imgs/q4c.png}
+\\ 
+
+I ran a simulation with 2000 trials for part a and got a normal distribution, which was what I was expecting. In the book it said scale parameter for sigma, In part b I see how it scaled the distribution. It was interesting to see how different sigma values changed the distribution, and it helped me understand the concept better. The probability of having at least 45\% of adults with heights between 170 cm and 180 cm is high because the normal distribution of heights in the population has a mean of 175 cm and a standard deviation of 7 cm. This means that a large proportion of the population falls within the range of 170 cm to 180 cm. The probability of having at least 55\% of adults with heights between 170 cm and 180 cm is relatively low because it is a higher threshold to meet than having 45\% or 50\% of adults fall within this range.
+
+\end{document}
