@@ -1,0 +1,166 @@
+# BERK ULUTAS 2522084
+
+# 45.61875 -> 39.36
+# there is no need to irmovq again and again first initalize some regs
+# to constant values then use it
+
+# 39.36 -> 27.875
+# switch case search linearly for which case to go. converted it to binary search
+# if addq/subq operation result is less than 0 go left else go right
+# shown in below diagram
+#                         0  1  2  3         4  5  6  7 
+#                            /         -4           \          
+#                           /                        \             
+#                    -4 -3 -2 -1                  0  1  2  3
+#                      /   +2  \                   /  -2    \ 
+#                     /         \                 /          \ 
+#                  -2 -1         0  1           -2 -1         0  1
+#                  /  +1 \       / -1 \         /  +1 \       / -1 \  
+#                -1       0     -1     0      -1       0    -1       0 
+#                 |       |      |     |       |       |     |       | 
+# CASE:           0       1      2     3       4       5     6       7   
+
+
+# 27.875 -> 27.73125
+# in case 5 write 331 than add 16 instead 2 operations 
+# directly write 331+16 to begin2
+
+# 27.73125 -> 22.19375
+# I used jtab instead of binary search. First of all created a jump table. after finding the 
+# mod 8 value jumped to the corresponding address in the jump table with jtab.
+
+
+.pos 0x0
+	irmovq stack, %rsp  	# Set up stack pointer  
+    irmovq array_begin1, %rdi
+    irmovq array_begin2, %rsi
+    irmovq $16, %rdx
+    call switch8
+    halt
+
+#implement your code below (DO NOT CHANGE/REMOVE THIS COMMENT)
+
+switch8:
+    irmovq $16, %r14  # initalize one
+    irmovq $8, %r13
+    irmovq $4, %rbx
+    irmovq $3, %r12
+    irmovq $2, %rcx 
+    irmovq $1, %rax
+
+loop:
+    andq %rdx, %rdx
+    jle done:
+    
+    mrmovq (%rdi), %r8    # r8 <- *begin
+    mrmovq (%rdi), %r11   # r11 <- *begin
+    # irmovq $8, %r12     # constant optimization
+    modq %r13, %r8        # constant optimization  # r8 <- *begin % 8   
+    mllq %r13, %r8
+jtab_ins:
+    jtab table, %r8
+    
+cases_over:
+    # irmovq $16, %r10         # constant optimization
+    addq %r14, %r11            # constant optimization
+sc5:
+    rmmovq %r11, (%rsi)
+    # irmovq $1, %r10            # constant optimization
+    subq %rax, %rdx             # constant optimization  # length--
+    # irmovq $8, %r10           # constant optimization  
+    addq %r13, %rdi             # constant optimization  # begin1++
+    addq %r13, %rsi             # constant optimization  # begin2++
+    jmp loop
+done:
+ret
+
+
+table:
+.quad case0
+.quad case1
+.quad case2
+.quad case3
+.quad case4
+.quad case5
+.quad case6
+.quad case7
+
+#0 -> add 1
+case0:
+# irmovq $1, %r10             # constant optimization
+addq %rax, %r11               # constant optimization
+jmp cases_over
+
+#1 -> multiply by 5
+case1:
+irmovq $5, %r10
+mllq %r10, %r11
+jmp cases_over
+
+#2 -> divide by 2
+case2:
+# irmovq $2, %r10              # constant optimization
+dvvq %rcx, %r11              # constant optimization
+jmp cases_over
+
+#3 -> take mod 3
+case3:
+# irmovq $3, %r10             # constant optimization
+modq %r12, %r11               # constant optimization
+jmp cases_over
+
+#4 -> subtract 7
+case4:
+irmovq $7, %r10
+subq %r10, %r11
+jmp cases_over
+
+#5 -> make it 331
+case5:
+irmovq $347, %r11
+jmp sc5 
+
+#6 -> add 10
+case6:
+irmovq $10, %r10
+addq %r10, %r11
+jmp cases_over
+
+#7 -> divide by 3
+case7:
+# irmovq $3, %r10                   # constant optimization
+dvvq %r12, %r11                     # constant optimization
+jmp cases_over
+
+
+
+#implement your code above (DO NOT CHANGE/REMOVE THIS COMMENT)
+
+.pos 0x1008
+array_begin1:
+    .quad 0
+    .quad 1
+    .quad 2
+    .quad 3
+    .quad 4
+    .quad 5
+    .quad 6
+    .quad 7
+    .quad 8
+    .quad 9
+    .quad 10
+    .quad 11
+    .quad 12
+    .quad 13
+    .quad 14
+    .quad 15
+array_end1:
+    .quad 0
+.pos 0x1500
+array_begin2:
+    .quad 0
+.pos 0x1F00
+stack:
+    .quad 0
+
+

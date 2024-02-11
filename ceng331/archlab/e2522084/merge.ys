@@ -1,0 +1,95 @@
+# BERK ULUTAS 2522084
+.pos 0x0
+init:
+    irmovq stack, %rsp
+    irmovq array_begin1, %rdi
+    irmovq array_end1, %rsi
+    irmovq array_begin2, %rdx
+    irmovq array_end2, %rcx
+    irmovq array_begin3, %r8
+    call merge
+    halt
+
+#implement your code below (DO NOT CHANGE/REMOVE THIS COMMENT)
+
+merge:   
+    jmp test_while
+
+else:
+    mrmovq (%rdx), %r12 # r12 <- *begin2
+    addq   %r10, %rdx   # begin2++
+    rmmovq %r12, (%r8)  # begin3(r8) <- *begin2 (r12)
+    addq   %r10, %r8    # begin3++
+test_while:
+    rrmovq %rsi, %r14 # r14 <- rsi (end1)
+    rrmovq %rcx, %r13 # r13 <- rcx (end2)
+    subq %rdx, %r13   # r13 <- end2 - begin2 (rdx)
+    subq %rdi, %r14   # r14 <- end1 - begin1 (rdi)
+    andq %r14, %r14
+    je not_both
+    andq %r13, %r13
+    je not_both
+    irmovq $8, %r10   # r10 <- 8
+    mrmovq (%rdx), %r12 # r12 <- *begin2
+    mrmovq (%rdi), %r11 # r11 <- *begin1
+    subq   %r11, %r12 # r12 <- *begin2 - *begin1
+    jle    else
+    mrmovq (%rdi), %r11 # r11 <- *begin1
+    addq   %r10, %rdi   # begin1++
+    rmmovq %r11, (%r8)  # begin3(r8) <- *begin1 (r11)
+    addq   %r10, %r8    # begin3++
+    jmp test_while
+one:
+    mrmovq (%rdi), %r11 # r11 <- *begin1
+    addq   %r10, %rdi   # begin1++
+    rmmovq %r11, (%r8)  # begin3(r8) <- *begin1 (r11)
+    addq   %r10, %r8    # begin3++
+not_both:
+    rrmovq %rsi, %r14 # r14 <- rsi (end1)
+    subq   %rdi, %r14   # r14 <- end1 - begin1 (rdi)
+    jg     one
+    jmp    two 
+two_two:
+    mrmovq (%rdx), %r12 # r12 <- *begin2
+    addq   %r10, %rdx   # begin2++
+    rmmovq %r12, (%r8)  # begin3(r8) <- *begin2 (r12)
+    addq   %r10, %r8    # begin3++
+two:
+    rrmovq %rcx, %r13 # r13 <- rcx (end2)
+    subq   %rdx, %r13   # r13 <- end2 - begin2 (rdx)
+    jg     two_two
+    ret
+
+#implement your code above (DO NOT CHANGE/REMOVE THIS COMMENT)
+
+.pos 0x1008
+array_begin1:
+    .quad 1
+    .quad 2
+    .quad 3
+    .quad 5
+    .quad 17
+    .quad 18
+    .quad 19
+    .quad 110
+array_end1:
+    .quad 0
+array_begin2:
+    .quad 10
+    .quad 11
+    .quad 12
+    .quad 200
+    .quad 201
+    .quad 202
+    .quad 203
+    .quad 204
+array_end2:
+    .quad 0
+.pos 0x1500
+array_begin3:
+    .quad 0
+.pos 0x1F00
+stack:
+    .quad 0
+
+

@@ -1,0 +1,15 @@
+id,binary_search_it_grade,binary_search_rec_grade,merge_grade,partb_y8code_grade,partb_ptest_grade,partb_jtabtest_grade,partb_answerkey_switch8_grade,partc_switch8_grade,partc_y86code_works,partc_ptest_works,partc_jtabtest_grade,partc_answerkey_switch8_grade,partc_performance_grade,partc_CPE,total,comments
+e9999999,15.0,15.0,15.0,2.5,2.5,5.0,15.0,15.0,True,True,5.0,15.0,50,25.816666666666666,155.0,"binary_search_it grade: 15.00 comments: Passed 30 / 30
+binary_search_rec grade: 15.00 comments: Passed 30 / 30
+merge grade: 15.00 comments: Passed 30 / 30
+partb_y8code_grade: 2.50 comments: Passed 16/16
+partb_ptest_grade: 2.50 comments: Passed 735/735
+partb_jtabtest_grade: 5.00 comments: Passed 3/3
+partb_answerkey_switch8_grade: 15.00 comments: Passed 30 / 30
+partc_y86code_works: True
+partc_ptest_works: True
+partc_switch8_grade: 15.00 comments: Passed 30 / 30
+partc_jtabtest_grade: 5.00 comments: Passed 3/3
+partc_answerkey_switch8_grade: 15.00 comments: Passed 30 / 30
+partc_performance_grade: 50.00 comments: CPE: 25.816666666666666
+total: 155.00"

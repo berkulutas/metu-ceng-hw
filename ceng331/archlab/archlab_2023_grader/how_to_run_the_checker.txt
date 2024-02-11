@@ -1,0 +1,10 @@
+- put all of your files under submissions_extracted as:
+submissions_extracted/e1234567/binary_search_it.ys
+submissions_extracted/e1234567/binary_search_rec.ys
+submissions_extracted/e1234567/merge.ys
+submissions_extracted/e1234567/seq-full.hcl
+submissions_extracted/e1234567/switch8.ys
+submissions_extracted/e1234567/pipe-full.hcl
+
+run ./put_testbeds_to_extracted.sh
+open results.csv

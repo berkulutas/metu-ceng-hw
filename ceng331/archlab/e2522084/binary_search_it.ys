@@ -1,0 +1,75 @@
+# BERK ULUTAS 2522084
+.pos 0x0
+init:
+    irmovq stack, %rsp
+    irmovq $6, %rdx
+    irmovq array_begin, %rdi
+    irmovq array_end, %rsi
+    call binary_search
+    halt
+
+#implement your code below (DO NOT CHANGE/REMOVE THIS COMMENT)
+
+binary_search:
+    irmovq  $-1, %rax
+    rrmovq  %rdi, %r8 # r8 <- begin
+    rrmovq  %rsi, %r9 # r9 <- end
+
+loop:
+    rrmovq  %r9, %r10 # r10 <- end
+    subq    %r8, %r10  # r10 <- end-begin
+    jle     out
+    irmovq  $8, %r14  # r14 <- 8
+    dvvq    %r14, %r10 # r10 <- (end - begin)/8 int division
+    irmovq  $2, %r14  # r14 <- 2
+    dvvq    %r14, %r10  # r10 <- (end-begin)/2
+    irmovq  $8, %r14  # r14 <- 8
+    mllq    %r14, %r10 # r10 <- (end - begin)*8 int division
+    addq    %r8, %r10   # r10 <- begin + (end-begin)/2
+    mrmovq  (%r10), %r11 # r11 <- *mid
+
+check:
+    subq    %rdx, %r11  # r11 <- *mid - value
+    jne     not_eq
+    irmovq  $8, %r14  # r14 <- 8
+    subq    %rdi, %r10 # r10 <- mid - inital begin
+    rrmovq  %r10, %rax # rax <- mid - inital begin
+    addq    %r14, %rax # rax <- mid + 1
+    dvvq    %r14, %rax # mid/8 to find index
+    ret
+ 
+
+not_eq:
+    jge else
+    irmovq  $8, %r14  # r14 <- 8
+    addq  %r14, %r10 # r10 <- mid + 1
+    rrmovq  %r10, %r8  # begin <- mid + 1
+    jmp loop
+
+else:
+    rrmovq  %r10, %r9 # end <- mid
+    jmp     loop
+    
+out:
+    irmovq  $-1, %rax # ret -1
+    ret
+
+#implement your code above (DO NOT CHANGE/REMOVE THIS COMMENT)
+
+.pos 0x1008
+array_begin:
+    .quad 1
+    .quad 2
+    .quad 3
+    .quad 5
+    .quad 6
+    .quad 7
+    .quad 9
+    .quad 11
+array_end:
+    .quad 0
+.pos 0x1F00
+stack:
+    .quad 0
+
+
